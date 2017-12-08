@@ -1,11 +1,15 @@
 public class BiasedCoin {
 	
+	//constants = ALL CAPS
 	private final int HEADS = 0;
 	private final int TAILS = 1;
 	
 	private int face;
 	
+	private double bias;
+	
 	public BiasedCoin() {
+		bias = .5;
 		flip();
 	}
 	
