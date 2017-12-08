@@ -13,8 +13,29 @@ public class BiasedCoin {
 		flip();
 	}
 	
+	public BiasedCoin(double bias) {
+		if(bias >= 0 && bias <= 1) {
+			this.bias = bias;
+		}
+		else {
+			bias = .5;
+			}
+		flip();
+		}
+	
+	//Modify flip so that it generates a random number then
+	//assigns face a value of HEADS if the number is less 
+	//than the bias; otherwise it assigns a value of TAILS
 	public void flip() {
-		face = (int)(Math.random() * 2);
+		//face = (int)(Math.random() * 2);
+		double random = Math.random();
+		
+		if(random < bias) {
+			face = HEADS;
+		}
+		else {
+			face = TAILS;
+		}
 	}
 	
 	public boolean isHeads() {
